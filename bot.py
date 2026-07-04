@@ -8,10 +8,13 @@ from aiogram.types import Message, ReplyKeyboardMarkup, KeyboardButton
 
 from dotenv import load_dotenv
 import os
+import json
 
 load_dotenv()
 
 TOKEN = os.getenv("BOT_TOKEN")
+with open("wines.json", "r", encoding="utf-8") as file:
+    wines = json.load(file)
 
 bot = Bot(
     token=TOKEN,
